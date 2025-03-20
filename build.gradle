@@ -1,36 +1,45 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 repositories {
-  mavenLocal()
-  mavenCentral()
-  maven {url "https://repo.spring.io/milestone"}
-  maven {url "https://repo.spring.io/snapshot"}
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "https://repo.spring.io/snapshot" }
 }
 
 dependencies {
-  implementation (
-          'org.springframework.boot:spring-boot-starter-web:3.4.2',
-          'com.amazonaws.serverless:aws-serverless-java-container-springboot3:[2.0-SNAPSHOT,)',
-  )
+    implementation(
+            'org.springframework.boot:spring-boot-starter-web:3.4.2',
+            'com.amazonaws.serverless:aws-serverless-java-container-springboot3:[2.0-SNAPSHOT,)'
+    )
 
-  testImplementation("com.amazonaws.serverless:aws-serverless-java-container-core:[2.0-SNAPSHOT,):tests")
-  testImplementation("org.apache.httpcomponents.client5:httpclient5:5.4.2")
-  testImplementation(platform("org.junit:junit-bom:5.11.4"))
-  testImplementation("org.junit.jupiter:junit-jupiter")
+    // ✅ Lombok Dependency (Compile-time Only)
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    // ✅ JUnit & HTTP Client for Testing
+    testImplementation "com.amazonaws.serverless:aws-serverless-java-container-core:[2.0-SNAPSHOT,):tests"
+    testImplementation "org.apache.httpcomponents.client5:httpclient5:5.4.2"
+    testImplementation platform("org.junit:junit-bom:5.11.4")
+    testImplementation "org.junit.jupiter:junit-jupiter"
 }
 
-task buildZip(type: Zip) {
-  from compileJava
-  from processResources
-  into('lib') {
-    from(configurations.compileClasspath) {
-      exclude 'tomcat-embed-*'
+tasks.register('buildZip', Zip) {
+    from compileJava
+    from processResources
+    into('lib') {
+        from(configurations.runtimeClasspath) { // ✅ Use runtimeClasspath instead of compileClasspath
+            exclude 'tomcat-embed-*'
+        }
     }
-  }
 }
 
-test {
-  useJUnitPlatform()
+tasks.named('test') {
+    useJUnitPlatform()
 }
 
-build.dependsOn buildZip
+tasks.named('build') {
+    dependsOn tasks.named('buildZip')
+}

@@ -38,3 +38,22 @@ build/
 ### Mac OS ###
 .DS_Store!/.idea/workspace.xml
 !/.idea/vcs.xml
+/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+/.gradle/buildOutputCleanup/cache.properties
+/.gradle/7.4.2/checksums/checksums.lock
+/.gradle/8.12.1/checksums/checksums.lock
+/.gradle/8.12.1/executionHistory/executionHistory.bin
+/.gradle/8.12.1/executionHistory/executionHistory.lock
+/.gradle/file-system.probe
+/.gradle/8.12.1/fileHashes/fileHashes.bin
+/.gradle/7.4.2/fileHashes/fileHashes.lock
+/.gradle/8.12.1/fileHashes/fileHashes.lock
+/.gradle/7.4.2/gc.properties
+/.gradle/8.12.1/gc.properties
+/.gradle/vcs-1/gc.properties
+/.gradle/7.4.2/fileChanges/last-build.bin
+/.gradle/8.12.1/fileChanges/last-build.bin
+/.gradle/8.12.1/checksums/md5-checksums.bin
+/.gradle/buildOutputCleanup/outputFiles.bin
+/.gradle/8.12.1/fileHashes/resourceHashesCache.bin
+/.gradle/8.12.1/checksums/sha1-checksums.bin
