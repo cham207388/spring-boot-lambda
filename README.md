@@ -2,6 +2,7 @@
 The spring-boot-lambda project, created with [`aws-serverless-java-container`](https://github.com/aws/serverless-java-container).
 
 The starter project defines a simple `/ping` resource that can accept `GET` requests with its tests.
+I added Course Resource
 
 The project folder also includes a `template.yml` file. You can use this [SAM](https://github.com/awslabs/serverless-application-model) file to deploy the project to AWS Lambda and Amazon API Gateway or test in local with the [SAM CLI](https://github.com/awslabs/aws-sam-cli). 
 
@@ -80,3 +81,25 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
     "pong": "Hello, World!"
 }
 ```
+
+## Manual Deploy 
+
+- create lambda
+- name, java21, x86_64
+  - edit handler com.abc.StreamLambdaHandler::handleRequest
+
+### Testing on AWS Lambda Console
+
+- test
+- api-gateway-proxy
+- change the path and httpMethod
+
+## Manually create API Gateway frontend
+
+- create
+- Rest api
+- / {proxy+}
+
+## Resources
+
+- [medium 1](https://medium.com/@javatechie/deploying-spring-boot-applications-to-aws-lambda-with-api-gateway-ae5c810008e5)
