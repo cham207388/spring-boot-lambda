@@ -18,6 +18,8 @@ public class CourseService {
     private final DynamoDbTable<Course> courseTable;
 
     public void addCourse(Course course) {
+        log.info("Adding course to DynamoDB");
+        course.setId(null); // DynamoDB requires null for auto-generated UUIDs
         courseTable.putItem(course);
     }
 

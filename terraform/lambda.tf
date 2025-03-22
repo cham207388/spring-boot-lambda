@@ -3,7 +3,7 @@ resource "aws_lambda_function" "springboot_lambda" {
   handler       = "com.abc.StreamLambdaHandler::handleRequest"
   runtime       = "java21"
   memory_size   = 512
-  timeout       = 30
+  timeout       = 300
   role          = aws_iam_role.lambda_exec_role.arn
 
   filename         = "${path.module}/../target/spring-boot-lambda-1.0-SNAPSHOT-lambda-package.zip"
