@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="added dynamo db config and terraform">
-      <change afterPath="$PROJECT_DIR$/terraform/outputs.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/variables.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/api-gateway.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/api-gateway.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dynamodb.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dynamodb.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/iam-permissions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/iam-permissions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/lambda.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/lambda.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/config/DynamoDBConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/config/DynamoDBConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/controller/PingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/controller/PingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/dto/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/dto/Course.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +31,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "cham207388"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/cham207388/spring-boot-lambda.git",
+    "accountId": "3e684b08-a58f-4400-bb9a-f8c100b3a3f8"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
 }]]></component>
@@ -106,7 +116,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742474271685</updated>
-      <workItem from="1742474273032" duration="13989000" />
+      <workItem from="1742474273032" duration="14943000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <option name="closed" value="true" />
