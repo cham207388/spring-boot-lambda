@@ -21,7 +21,7 @@ inputs:
     required: false
   destroy:
     description: Terraform destroy
-    default: false
+    default: "no"
     required: false
 
 runs:
@@ -102,5 +102,10 @@ runs:
             export TF_VAR_$key="$value"          # Export as TF_VAR_ format
           done
         fi
-        terraform apply -auto-approve
+        echo "${{ inputs.destroy }}"
+        if [[ -z "${{ inputs.destroy }}" == "yes" ]]; then
+          terraform destroy -auto-approve
+        else
+          terraform apply -auto-approve
+        fi
       shell: bash
