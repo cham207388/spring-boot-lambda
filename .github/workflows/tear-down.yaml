@@ -1,9 +1,7 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - 2-gh-actions
+  workflow_dispatch:
 
 jobs:
   build:
@@ -53,4 +51,4 @@ jobs:
       - name: Terraform Apply
         run: |
             cd terraform
-            terraform apply -auto-approve
+            terraform destroy -auto-approve
