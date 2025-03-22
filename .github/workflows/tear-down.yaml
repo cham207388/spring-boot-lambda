@@ -2,9 +2,6 @@ name: Teardown
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 3-22-25-swagger
 
 jobs:
   build:
@@ -13,12 +10,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy Lambda
-        uses: ./.github/actions/deploy
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
         with:
-          directory: ./terraform
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-          variables: 'aws_region=us-east-2'
-          destroy: 'yes'
+          terraform_version: 1.9.4
+
+      - name: Terraform Init
+        run: |
+            cd terraform
+            terraform init -upgrade
+
+      - name: Terraform Plan
+        run: |
+            cd terraform
+            terraform plan
+
+      - name: Terraform Destroy
+        run: |
+            cd terraform
+            terraform destroy -auto-approve
