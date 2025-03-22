@@ -43,4 +43,16 @@ public class CourseController {
         return course.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+    @PutMapping(value = "/{id}", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<Course> updateCourse(@PathVariable String id, @RequestBody Course updatedCourse) {
+        boolean updated = courseService.updateCourse(id, updatedCourse);
+        return updated ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> deleteCourse(@PathVariable String id) {
+        boolean deleted = courseService.deleteCourse(id);
+        return deleted ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
