@@ -12,45 +12,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up JDK
-        uses: actions/setup-java@v4
+      - name: Build project
+        uses: cham207388/github-custom-actions/mvn-jdk21@main
+
+      - name: Destroy Lambda
+        uses: cham207388/github-custom-actions/terraform@main
         with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Check maven version
-        run: |
-          mvn --version
-
-      - name: mvn clean
-        run: mvn clean
-
-      - name: mvn package
-        run: mvn package
-
-      - name: Login to AWS
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
+          directory: ./terraform
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: "us-east-2"
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.9.4
-
-      - name: Terraform Init
-        run: |
-            cd terraform
-            terraform init -upgrade
-
-      - name: Terraform Plan
-        run: |
-            cd terraform
-            terraform plan
-
-      - name: Terraform Apply
-        run: |
-            cd terraform
-            terraform apply -auto-approve
+          aws-region: ${{ secrets.AWS_REGION }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          variables: "aws_region=us-east-2"
