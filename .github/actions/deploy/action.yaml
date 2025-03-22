@@ -65,12 +65,6 @@ runs:
         ls -ltr
       shell: bash
 
-    - name: Terraform Validate
-      run: |
-        cd ${{ inputs.directory }}
-        terraform validate
-      shell: bash
-
     - name: Terraform Plan
       run: |
         cd ${{ inputs.directory }}
