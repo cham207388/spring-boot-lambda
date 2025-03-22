@@ -96,7 +96,7 @@ runs:
             export TF_VAR_$key="$value"          # Export as TF_VAR_ format
           done
         fi
-        echo "${{ inputs.destroy }}"
+        echo "destroy => ${{ inputs.destroy }}"
         if [[ -z "${{ inputs.destroy }}" == "yes" ]]; then
           terraform destroy -auto-approve
         else
