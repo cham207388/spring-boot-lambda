@@ -26,7 +26,7 @@ resource "aws_api_gateway_integration" "lambda_proxy" {
 }
 
 resource "aws_api_gateway_deployment" "api_deployment" {
-  depends_on = [aws_api_gateway_integration.lambda_proxy]
+  depends_on  = [aws_api_gateway_integration.lambda_proxy]
   rest_api_id = aws_api_gateway_rest_api.course_api.id
   stage_name  = "dev"
 }

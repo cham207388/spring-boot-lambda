@@ -23,7 +23,7 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
 resource "aws_iam_policy" "lambda_dynamodb_crud_policy" {
   name        = "lambda-dynamodb-crud-policy"
   description = "Lambda access to specific DynamoDB table"
-  policy      = jsonencode({
+  policy = jsonencode({
     Version = "2012-10-17",
     Statement = [
       {
