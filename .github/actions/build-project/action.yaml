@@ -1,0 +1,21 @@
+name: Build Project
+
+runs:
+  using: "composite"
+  steps:
+    - name: Print Where I AM
+      run: pwd
+      shell: bash
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+    - name: mvn clean
+      run: mvn clean
+      shell: bash
+
+    - name: mvn package
+      run: mvn package
+      shell: bash
