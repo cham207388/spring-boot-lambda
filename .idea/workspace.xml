@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="updated to remove repository layer">
-      <change afterPath="$PROJECT_DIR$/terraform/settings.tf" afterDir="false" />
+    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="validate tf config">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/main.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/lambda.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/lambda.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="1-dynamodb" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +70,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "1-dynamodb",
+    "git-widget-placeholder": "2-gh-actions",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -117,7 +116,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742474271685</updated>
-      <workItem from="1742474273032" duration="17509000" />
+      <workItem from="1742474273032" duration="18093000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <option name="closed" value="true" />
@@ -215,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742654719394</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="validate tf config">
+      <option name="closed" value="true" />
+      <created>1742655473354</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742655473354</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +238,7 @@
     <MESSAGE value="update course entity and actuator" />
     <MESSAGE value="package but about to use aws recommended approach" />
     <MESSAGE value="updated to remove repository layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated to remove repository layer" />
+    <MESSAGE value="validate tf config" />
+    <option name="LAST_COMMIT_MESSAGE" value="validate tf config" />
   </component>
 </project>
