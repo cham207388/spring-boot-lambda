@@ -11,7 +11,7 @@ resource "aws_lambda_function" "springboot_lambda" {
 
   depends_on = [
     aws_iam_role_policy_attachment.lambda_logs,
-    aws_iam_role_policy_attachment.lambda_dynamodb
+    aws_iam_role_policy_attachment.lambda_dynamodb_crud_attach
   ]
 }
 

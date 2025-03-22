@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="package but about to use aws recommended approach">
-      <change afterPath="$PROJECT_DIR$/terraform/data.tf" afterDir="false" />
+    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="updated to remove repository layer">
+      <change afterPath="$PROJECT_DIR$/terraform/settings.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/config/DynamoDBConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/config/DynamoDBConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/dto/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/dto/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/repository/CourseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/service/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/iam-permissions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/iam-permissions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/lambda.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/lambda.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +41,9 @@
     "accountId": "3e684b08-a58f-4400-bb9a-f8c100b3a3f8"
   }
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
 }]]></component>
@@ -120,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742474271685</updated>
-      <workItem from="1742474273032" duration="16487000" />
+      <workItem from="1742474273032" duration="17509000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <option name="closed" value="true" />
@@ -210,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742653506285</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updated to remove repository layer">
+      <option name="closed" value="true" />
+      <created>1742654719394</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742654719394</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +230,7 @@
     <MESSAGE value="added dynamo db config and terraform" />
     <MESSAGE value="update course entity and actuator" />
     <MESSAGE value="package but about to use aws recommended approach" />
-    <option name="LAST_COMMIT_MESSAGE" value="package but about to use aws recommended approach" />
+    <MESSAGE value="updated to remove repository layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated to remove repository layer" />
   </component>
 </project>
