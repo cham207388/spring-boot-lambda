@@ -7,4 +7,9 @@ resource "aws_dynamodb_table" "course_table" {
     name = "id"
     type = "S"
   }
+
+  tags = {
+    Name = "CourseTable"
+    Env  = "dev"
+  }
 }

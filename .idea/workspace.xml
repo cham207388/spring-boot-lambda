@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="git ignore and building gradle">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abc/config/DynamoDBConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abc/repository/CourseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dynamodb.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/iam.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/lambda.tf" afterDir="false" />
+    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="added dynamo db config and terraform">
+      <change afterPath="$PROJECT_DIR$/terraform/outputs.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/variables.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/StreamLambdaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/StreamLambdaHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/dto/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/dto/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abc/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abc/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/api-gateway.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/api-gateway.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dynamodb.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dynamodb.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/iam-permissions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/iam-permissions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/lambda.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/lambda.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742474271685</updated>
-      <workItem from="1742474273032" duration="12671000" />
+      <workItem from="1742474273032" duration="13989000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <option name="closed" value="true" />
@@ -176,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742647788732</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added dynamo db config and terraform">
+      <option name="closed" value="true" />
+      <created>1742650725897</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742650725897</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +192,7 @@
     <MESSAGE value="update" />
     <MESSAGE value="deployed successfully and working" />
     <MESSAGE value="git ignore and building gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="git ignore and building gradle" />
+    <MESSAGE value="added dynamo db config and terraform" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dynamo db config and terraform" />
   </component>
 </project>
