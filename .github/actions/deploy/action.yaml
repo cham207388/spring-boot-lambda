@@ -97,7 +97,8 @@ runs:
           done
         fi
         echo "destroy => ${{ inputs.destroy }}"
-        if [[ -z "${{ inputs.destroy }}" == "yes" ]]; then
+        if [[ "${{ inputs.destroy }}" == "yes" ]]; then
+          echo "terraform destroy in effect"
           terraform destroy -auto-approve
         else
           terraform apply -auto-approve
