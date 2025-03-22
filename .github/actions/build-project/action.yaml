@@ -12,6 +12,7 @@ runs:
       with:
         distribution: 'temurin'
         java-version: '21'
+
     - name: mvn clean
       run: mvn clean
       shell: bash

@@ -19,7 +19,7 @@ jobs:
         uses: ./.github/actions/deploy
         with:
           directory: ./terraform
-          aws-region: us-east-2
-          variables: "aws_region=us-east-2"
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          variables: "aws_region=us-east-2"

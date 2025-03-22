@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="package">
-      <change afterPath="$PROJECT_DIR$/.github/actions/deploy/action.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/use-actions.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yaml" afterDir="false" />
+    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="workflow and actions">
+      <change beforePath="$PROJECT_DIR$/.github/actions/build-project/action.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/build-project/action.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/use-actions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/use-actions.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742474271685</updated>
-      <workItem from="1742474273032" duration="20419000" />
+      <workItem from="1742474273032" duration="20613000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <option name="closed" value="true" />
@@ -255,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742656215350</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="workflow and actions">
+      <option name="closed" value="true" />
+      <created>1742658210748</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1742658210748</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +293,7 @@
     <MESSAGE value="check maven" />
     <MESSAGE value="mvn clean package" />
     <MESSAGE value="package" />
-    <option name="LAST_COMMIT_MESSAGE" value="package" />
+    <MESSAGE value="workflow and actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="workflow and actions" />
   </component>
 </project>
