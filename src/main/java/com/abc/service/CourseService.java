@@ -1,47 +1,34 @@
 package com.abc.service;
 
 import com.abc.dto.Course;
+import com.abc.repository.CourseRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class CourseService {
 
-    //RDS DB
-    private final List<Course> courses = new ArrayList<>();
-
-    // Create a new course
+    private final CourseRepository courseRepository;
     public void addCourse(Course course) {
-        courses.add(course);
+        courseRepository.save(course);
     }
 
     // Retrieve all courses
     public List<Course> getAllCourses() {
-        return courses;
+        return (List<Course>) courseRepository.findAll();
     }
 
     // Retrieve a course by id
-    public Optional<Course> getCourseById(int id) {
-        return courses.stream()
-                .filter(course -> course.getId() == id)
-                .findFirst();
+    public Optional<Course> getCourseById(String id) {
+        return courseRepository.findById(id);
     }
 
-    // Update a course
-    public boolean updateCourse(int id, Course newCourse) {
-        return getCourseById(id).map(existingCourse -> {
-            courses.remove(existingCourse);
-            courses.add(newCourse);
-            return true;
-        }).orElse(false);
+    public Optional<Course> getCourseByName(String name) {
+        return courseRepository.findByName(name);
     }
 
-    // Delete a course by id
-    public boolean deleteCourse(int id) {
-        return courses
-                .removeIf(course -> course.getId() == id);
-    }
 }

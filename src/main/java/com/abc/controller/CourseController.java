@@ -31,21 +31,16 @@ public class CourseController {
     }
 
     @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<Course> getCourseById(@PathVariable int id) {
+    public ResponseEntity<Course> getCourseById(@PathVariable String id) {
         Optional<Course> course = courseService.getCourseById(id);
         return course.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PutMapping(value = "/{id}", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Course> updateCourse(@PathVariable int id, @RequestBody Course newCourse) {
-        boolean updated = courseService.updateCourse(id, newCourse);
-        return new ResponseEntity<>(updated ? HttpStatus.OK : HttpStatus.NOT_FOUND);
-    }
-
-    @DeleteMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<Void> deleteCourse(@PathVariable int id) {
-        boolean deleted = courseService.deleteCourse(id);
-        return new ResponseEntity<>(deleted ? HttpStatus.NO_CONTENT : HttpStatus.NOT_FOUND);
+    @GetMapping(value = "/name/{name}", produces = "application/json")
+    public ResponseEntity<Course> getCourseByName(@PathVariable String name) {
+        Optional<Course> course = courseService.getCourseById(name);
+        return course.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }
