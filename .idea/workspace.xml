@@ -4,30 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="workflow and actions">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b5114d6a-ff5d-412e-9b54-1ab69d7e9284" name="Changes" comment="ignore">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terraform/api-gateway.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/api-gateway.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/iam-permissions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/iam-permissions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/lambda.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/lambda.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="1-dynamodb" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -42,24 +32,16 @@
     "accountId": "3e684b08-a58f-4400-bb9a-f8c100b3a3f8"
   }
 }]]></component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
+  "associatedIndex": 0
 }]]></component>
-  <component name="ProjectId" id="2ua6KESZbv79xsdt2VNyXDr5Ffy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2ug8mSW5OXyC8Zh5HZsN3qBEnyV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JUnit.StreamLambdaHandlerTest.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ChatTagsLlmMigration": "true",
     "RunOnceActivity.CodyAccountHistoryMigration": "true",
     "RunOnceActivity.CodyAccountsIdsRefresh": "true",
@@ -74,41 +56,12 @@
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "2-gh-actions",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/baicham/develop/java-projects/spring-boot-lambda/.github/workflows",
+    "last_opened_file_path": "/Users/baicham/develop/java-projects/spring-boot-lambda",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/.github/workflows" />
-      <recent name="$PROJECT_DIR$/.github/actions" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="StreamLambdaHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-boot-lambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.abc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.abc" />
-      <option name="MAIN_CLASS_NAME" value="com.abc.StreamLambdaHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.StreamLambdaHandlerTest" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -120,197 +73,29 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="" />
-      <created>1742474271685</created>
+      <changelist id="b5114d6a-ff5d-412e-9b54-1ab69d7e9284" name="Changes" comment="" />
+      <created>1742659015664</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1742474271685</updated>
-      <workItem from="1742474273032" duration="21191000" />
+      <updated>1742659015664</updated>
+      <workItem from="1742659016809" duration="606000" />
     </task>
-    <task id="LOCAL-00001" summary="git ignore">
+    <task id="LOCAL-00001" summary="ignore">
       <option name="closed" value="true" />
-      <created>1742476173205</created>
+      <created>1742659194165</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1742476173205</updated>
+      <updated>1742659194165</updated>
     </task>
-    <task id="LOCAL-00002" summary="git ignore">
-      <option name="closed" value="true" />
-      <created>1742476214358</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1742476214358</updated>
-    </task>
-    <task id="LOCAL-00003" summary="first commit. Deployed successfully">
-      <option name="closed" value="true" />
-      <created>1742476302568</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1742476302568</updated>
-    </task>
-    <task id="LOCAL-00004" summary="update">
-      <option name="closed" value="true" />
-      <created>1742479022831</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1742479022831</updated>
-    </task>
-    <task id="LOCAL-00005" summary="deployed successfully and working">
-      <option name="closed" value="true" />
-      <created>1742496498956</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1742496498956</updated>
-    </task>
-    <task id="LOCAL-00006" summary="git ignore and building gradle">
-      <option name="closed" value="true" />
-      <created>1742497579795</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1742497579795</updated>
-    </task>
-    <task id="LOCAL-00007" summary="git ignore and building gradle">
-      <option name="closed" value="true" />
-      <created>1742647578472</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1742647578472</updated>
-    </task>
-    <task id="LOCAL-00008" summary="git ignore and building gradle">
-      <option name="closed" value="true" />
-      <created>1742647788732</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1742647788732</updated>
-    </task>
-    <task id="LOCAL-00009" summary="added dynamo db config and terraform">
-      <option name="closed" value="true" />
-      <created>1742650725897</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1742650725897</updated>
-    </task>
-    <task id="LOCAL-00010" summary="update course entity and actuator">
-      <option name="closed" value="true" />
-      <created>1742652742244</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1742652742244</updated>
-    </task>
-    <task id="LOCAL-00011" summary="package but about to use aws recommended approach">
-      <option name="closed" value="true" />
-      <created>1742653506285</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1742653506285</updated>
-    </task>
-    <task id="LOCAL-00012" summary="updated to remove repository layer">
-      <option name="closed" value="true" />
-      <created>1742654719394</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1742654719394</updated>
-    </task>
-    <task id="LOCAL-00013" summary="validate tf config">
-      <option name="closed" value="true" />
-      <created>1742655473354</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1742655473354</updated>
-    </task>
-    <task id="LOCAL-00014" summary="check maven">
-      <option name="closed" value="true" />
-      <created>1742655941700</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1742655941700</updated>
-    </task>
-    <task id="LOCAL-00015" summary="mvn clean package">
-      <option name="closed" value="true" />
-      <created>1742656143240</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1742656143240</updated>
-    </task>
-    <task id="LOCAL-00016" summary="package">
-      <option name="closed" value="true" />
-      <created>1742656215350</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1742656215350</updated>
-    </task>
-    <task id="LOCAL-00017" summary="workflow and actions">
-      <option name="closed" value="true" />
-      <created>1742658210748</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1742658210748</updated>
-    </task>
-    <task id="LOCAL-00018" summary="workflow and actions">
-      <option name="closed" value="true" />
-      <created>1742658380087</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1742658380087</updated>
-    </task>
-    <task id="LOCAL-00019" summary="workflow and actions">
-      <option name="closed" value="true" />
-      <created>1742658610781</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1742658610781</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="git ignore" />
-    <MESSAGE value="first commit. Deployed successfully" />
-    <MESSAGE value="update" />
-    <MESSAGE value="deployed successfully and working" />
-    <MESSAGE value="git ignore and building gradle" />
-    <MESSAGE value="added dynamo db config and terraform" />
-    <MESSAGE value="update course entity and actuator" />
-    <MESSAGE value="package but about to use aws recommended approach" />
-    <MESSAGE value="updated to remove repository layer" />
-    <MESSAGE value="validate tf config" />
-    <MESSAGE value="check maven" />
-    <MESSAGE value="mvn clean package" />
-    <MESSAGE value="package" />
-    <MESSAGE value="workflow and actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="workflow and actions" />
+    <MESSAGE value="ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
   </component>
 </project>
