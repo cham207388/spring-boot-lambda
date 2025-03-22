@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbecfad7-bf0f-444b-bafa-44bc2db1042a" name="Changes" comment="workflow and actions">
-      <change beforePath="$PROJECT_DIR$/.github/actions/build-project/action.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/build-project/action.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/use-actions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/use-actions.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -124,7 +123,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742474271685</updated>
-      <workItem from="1742474273032" duration="20613000" />
+      <workItem from="1742474273032" duration="20825000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <option name="closed" value="true" />
@@ -262,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742658210748</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="workflow and actions">
+      <option name="closed" value="true" />
+      <created>1742658380087</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1742658380087</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
