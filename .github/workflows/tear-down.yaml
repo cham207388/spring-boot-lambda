@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build project
-        uses: ./.github/actions/build-project
+        uses: cham207388/github-custom-actions/mvn-jdk21@main
 
       - name: Destroy Lambda
         uses: cham207388/github-custom-actions/terraform@main
@@ -23,5 +23,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           variables: "aws_region=us-east-2"
-          destroy: 'yes'
+          destroy: "yes"
