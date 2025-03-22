@@ -40,20 +40,12 @@ public class CourseController {
     @PutMapping(value = "/{id}", produces = "application/json", consumes = "application/json")
     public ResponseEntity<Course> updateCourse(@PathVariable int id, @RequestBody Course newCourse) {
         boolean updated = courseService.updateCourse(id, newCourse);
-        if (updated) {
-            return new ResponseEntity<>(newCourse, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        return new ResponseEntity<>(updated ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<Void> deleteCourse(@PathVariable int id) {
         boolean deleted = courseService.deleteCourse(id);
-        if (deleted) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        return new ResponseEntity<>(deleted ? HttpStatus.NO_CONTENT : HttpStatus.NOT_FOUND);
     }
 }
