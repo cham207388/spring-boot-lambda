@@ -3,7 +3,7 @@ name: Deployment
 on:
   push:
     branches:
-      - 3-22-25-swaggerx
+      - 3-22-25-swagger
 
 jobs:
   build:

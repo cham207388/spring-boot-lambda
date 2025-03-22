@@ -2,11 +2,15 @@ package com.abc.service;
 
 import com.abc.dto.Course;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
+
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class CourseService {
@@ -18,6 +22,7 @@ public class CourseService {
     }
 
     public List<Course> getAllCourses() {
+        log.info("Getting all courses from DynamoDB");
         return courseTable.scan()
                 .items()
                 .stream()
@@ -25,10 +30,12 @@ public class CourseService {
     }
 
     public Optional<Course> getCourseById(String id) {
+        log.info("Getting course with ID {} from DynamoDB", id);
         return Optional.ofNullable(courseTable.getItem(r -> r.key(k -> k.partitionValue(id))));
     }
 
     public boolean updateCourse(String id, Course newCourse) {
+        log.info("Updating course with ID {} from DynamoDB", id);
         Course existing = courseTable.getItem(r -> r.key(k -> k.partitionValue(id)));
         if (existing == null) return false;
 
@@ -38,6 +45,7 @@ public class CourseService {
     }
 
     public boolean deleteCourse(String id) {
+        log.info("Deleting course with ID {} from DynamoDB", id);
         Course existing = courseTable.getItem(r -> r.key(k -> k.partitionValue(id)));
         if (existing == null) return false;
 
