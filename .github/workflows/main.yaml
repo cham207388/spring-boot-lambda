@@ -1,9 +1,7 @@
 name: Deployment
 
 on:
-#  push:
-#    branches:
-#      - 3-22-25-swagger
+  workflow_dispatch:
   pull_request:
     branches:
       - main
