@@ -108,6 +108,16 @@ I use terraform to create a lambda function and api gateway frontend
 - use the .zip file to upload to lambda
 - let api gateway points to this function
 
+### create ACM certificate
+
+- use the url you want: dev.your-domain.com or *.your-domain.com
+- wait for the certificate to be issued
+- then api-gateway will create this A alias record: dev.your-domain.com (or what matches the wildcard) in router53
+- note the acm arn once it's issued. I save my in gh secrets. There was an error retrieving it using tf data block
+- configure tf api gateway and route53
+- deploy
+- access your base url dev.alhagiebaicham.com/
+
 ## Resources
 
 - [medium 1](https://medium.com/@javatechie/deploying-spring-boot-applications-to-aws-lambda-with-api-gateway-ae5c810008e5)
