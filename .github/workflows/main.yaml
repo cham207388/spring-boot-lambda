@@ -18,7 +18,7 @@ jobs:
       - name: Build project
         uses: cham207388/github-custom-actions/mvn-jdk21@main
 
-      - name: Destroy Lambda
+      - name: Deploy Lambda
         uses: cham207388/github-custom-actions/terraform@main
         with:
           directory: ./terraform
