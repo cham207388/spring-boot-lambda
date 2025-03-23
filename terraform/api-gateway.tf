@@ -47,3 +47,19 @@ resource "aws_api_gateway_stage" "dev_stage" {
   stage_name    = "dev"
   description   = "Development stage"
 }
+
+# custom domain and mapping
+resource "aws_api_gateway_domain_name" "custom_domain" {
+  domain_name = "dev.alhagiebaicham.com"
+  regional_certificate_arn = data.aws_acm_certificate.dev_cert.arn
+
+  endpoint_configuration {
+    types = ["REGIONAL"]
+  }
+}
+
+resource "aws_api_gateway_base_path_mapping" "mapping" {
+  domain_name = aws_api_gateway_domain_name.custom_domain.domain_name
+  api_id      = aws_api_gateway_rest_api.course_api.id
+  stage_name  = aws_api_gateway_stage.dev_stage.stage_name
+}
