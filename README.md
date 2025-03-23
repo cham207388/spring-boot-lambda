@@ -100,7 +100,16 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 - Rest api
 - / {proxy+}
 
+## Automate
+
+I use terraform to create a lambda function and api gateway frontend
+
+- build the project
+- use the .zip file to upload to lambda
+- let api gateway points to this function
+
 ## Resources
 
 - [medium 1](https://medium.com/@javatechie/deploying-spring-boot-applications-to-aws-lambda-with-api-gateway-ae5c810008e5)
 - [aws-serverless](https://github.com/aws/serverless-java-container)
+

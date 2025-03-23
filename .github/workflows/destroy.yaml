@@ -2,9 +2,6 @@ name: Teardown
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 3-22-25-swagger
 
 jobs:
   build:
