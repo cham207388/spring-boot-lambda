@@ -1,47 +1,60 @@
 package com.abc.service;
 
 import com.abc.dto.Course;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
+
+@Slf4j
 @Service
+@RequiredArgsConstructor
 public class CourseService {
 
-    //RDS DB
-    private final List<Course> courses = new ArrayList<>();
+    private final DynamoDbTable<Course> courseTable;
 
-    // Create a new course
     public void addCourse(Course course) {
-        courses.add(course);
+        log.info("Adding course request to DynamoDB: {}", course);
+
+        course.setId(UUID.randomUUID().toString());
+        log.info("Adding course entity to DynamoDB: {}", course);
+        courseTable.putItem(course);
     }
 
-    // Retrieve all courses
     public List<Course> getAllCourses() {
-        return courses;
+        log.info("Getting all courses from DynamoDB");
+        return courseTable.scan()
+                .items()
+                .stream()
+                .toList();
     }
 
-    // Retrieve a course by id
-    public Optional<Course> getCourseById(int id) {
-        return courses.stream()
-                .filter(course -> course.getId() == id)
-                .findFirst();
+    public Optional<Course> getCourseById(String id) {
+        log.info("Getting course with ID {} from DynamoDB", id);
+        return Optional.ofNullable(courseTable.getItem(r -> r.key(k -> k.partitionValue(id))));
     }
 
-    // Update a course
-    public boolean updateCourse(int id, Course newCourse) {
-        return getCourseById(id).map(existingCourse -> {
-            courses.remove(existingCourse);
-            courses.add(newCourse);
-            return true;
-        }).orElse(false);
+    public boolean updateCourse(String id, Course newCourse) {
+        log.info("Updating course with ID {} from DynamoDB", id);
+        Course existing = courseTable.getItem(r -> r.key(k -> k.partitionValue(id)));
+        if (existing == null) return false;
+
+        newCourse.setId(id);
+        courseTable.putItem(newCourse);
+        return true;
     }
 
-    // Delete a course by id
-    public boolean deleteCourse(int id) {
-        return courses
-                .removeIf(course -> course.getId() == id);
+    public boolean deleteCourse(String id) {
+        log.info("Deleting course with ID {} from DynamoDB", id);
+        Course existing = courseTable.getItem(r -> r.key(k -> k.partitionValue(id)));
+        if (existing == null) return false;
+
+        courseTable.deleteItem(existing);
+        return true;
     }
 }

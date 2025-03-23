@@ -4,11 +4,7 @@ target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea
-.idea/*.xml
-#.idea/jarRepositories.xml
-#.idea/compiler.xml
-#.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -57,3 +53,9 @@ build/
 /.gradle/buildOutputCleanup/outputFiles.bin
 /.gradle/8.12.1/fileHashes/resourceHashesCache.bin
 /.gradle/8.12.1/checksums/sha1-checksums.bin
+
+# terrafor
+
+**/.terraform.lock.hcl
+**/.terraform
+.idea/workspace.xml

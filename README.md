@@ -103,3 +103,4 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 ## Resources
 
 - [medium 1](https://medium.com/@javatechie/deploying-spring-boot-applications-to-aws-lambda-with-api-gateway-ae5c810008e5)
+- [aws-serverless](https://github.com/aws/serverless-java-container)
