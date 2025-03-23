@@ -1,9 +1,12 @@
 name: Deployment
 
 on:
-  push:
+#  push:
+#    branches:
+#      - 3-22-25-swagger
+  pull_request:
     branches:
-      - 3-22-25-swaggerx
+      - main
 
 jobs:
   build:
