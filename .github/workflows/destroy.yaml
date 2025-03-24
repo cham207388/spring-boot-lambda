@@ -12,6 +12,8 @@ jobs:
 
       - name: Build project
         uses: cham207388/github-custom-actions/mvn-jdk21@main
+        with:
+          test: 'no'
 
       - name: Destroy Lambda
         uses: cham207388/github-custom-actions/terraform@main
