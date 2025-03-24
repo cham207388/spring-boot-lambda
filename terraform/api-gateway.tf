@@ -1,6 +1,19 @@
 resource "aws_api_gateway_rest_api" "course_api" {
   name        = "course-api"
   description = "REST API for Spring Boot Lambda"
+
+  binary_media_types = [
+    "application/octet-stream",
+    "application/javascript",
+    "application/json",
+    "application/xml",
+    "text/html",
+    "text/css",
+    "text/plain",
+    "image/png",
+    "image/jpeg",
+    "*/*"
+  ]
 }
 
 resource "aws_api_gateway_resource" "proxy" {

@@ -1,4 +1,20 @@
-# spring-boot-lambda serverless API
+# Spring-boot-lambda serverless API
+
+- [Spring-boot-lambda serverless API](#spring-boot-lambda-serverless-api)
+  - [Pre-requisites](#pre-requisites)
+  - [Building the project](#building-the-project)
+  - [Testing locally with the SAM CLI](#testing-locally-with-the-sam-cli)
+  - [Deploying to AWS](#deploying-to-aws)
+  - [Manual Deploy](#manual-deploy)
+    - [Testing on AWS Lambda Console](#testing-on-aws-lambda-console)
+  - [Manually create API Gateway frontend](#manually-create-api-gateway-frontend)
+  - [Automate](#automate)
+    - [create ACM certificate](#create-acm-certificate)
+  - [Resources](#resources)
+  - [Playground](#playground)
+    - [Fixing swagger issue behind api-gateway](#fixing-swagger-issue-behind-api-gateway)
+
+
 The spring-boot-lambda project, created with [`aws-serverless-java-container`](https://github.com/aws/serverless-java-container).
 
 The starter project defines a simple `/ping` resource that can accept `GET` requests with its tests.
@@ -122,4 +138,19 @@ I use terraform to create a lambda function and api gateway frontend
 
 - [medium 1](https://medium.com/@javatechie/deploying-spring-boot-applications-to-aws-lambda-with-api-gateway-ae5c810008e5)
 - [aws-serverless](https://github.com/aws/serverless-java-container)
+
+## Playground
+
+### Fixing swagger issue behind api-gateway
+
+error
+
+```text
+Uncaught SyntaxError: Invalid or unexpected token in swagger-ui-bundle.js
+swagger-initializer.js:5 Uncaught ReferenceError: SwaggerUIBundle is not defined
+```
+
+- update api gateway tf config for binary media types
+- create StaticResourceConfig 
+
 
