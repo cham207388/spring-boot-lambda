@@ -4,7 +4,7 @@
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <customFields>{"application":"${spring.application.name}","environment":"${spring.profiles.active:default}"}</customFields>
+            <customFields>{"application":"${appName}","environment":"${env}"}</customFields>
             <timeZone>UTC</timeZone>
         </encoder>
     </appender>
