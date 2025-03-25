@@ -6,12 +6,12 @@
     <springProperty scope="context" name="appName" source="spring.application.name" defaultValue="spring-boot-lambda-default"/>
     <springProperty scope="context" name="env" source="spring.profiles.active" defaultValue="default"/>
 
-    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <customFields>{"application":"${appName}","environment":"${env}"}</customFields>
-            <timeZone>UTC</timeZone>
-        </encoder>
-    </appender>
+<!--    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <encoder class="net.logstash.logback.encoder.LogstashEncoder">-->
+<!--            <customFields>{"application":"${appName}","environment":"${env}"}</customFields>-->
+<!--            <timeZone>UTC</timeZone>-->
+<!--        </encoder>-->
+<!--    </appender>-->
 
     <root level="INFO">
         <appender-ref ref="console"/>
