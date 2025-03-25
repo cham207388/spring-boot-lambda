@@ -8,7 +8,6 @@
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-<!--            <customFields>{"application":"${appName}","environment":"${env}"}</customFields>-->
             <timeZone>UTC</timeZone>
         </encoder>
     </appender>
