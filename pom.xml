@@ -65,6 +65,16 @@
             <artifactId>lombok</artifactId>
             <version>1.18.34</version>
         </dependency>
+        <!-- structured logs -->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>7.4</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
 
         <!--        dynamo db-->
         <dependency>
