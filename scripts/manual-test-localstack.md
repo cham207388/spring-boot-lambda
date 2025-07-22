@@ -24,7 +24,7 @@ terraform output lambda_function_name
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
   --payload "$(echo '{"httpMethod":"GET","path":"/ping","headers":{}}' | base64)" \
-  response.json && cat response.json | jq -r '.body' | jq .
+  ../testing/response.json && cat ../testing/response.json | jq -r '.body' | jq .
 ```
 
 ### 2. Get All Courses
@@ -32,7 +32,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
   --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json && cat response.json | jq -r '.body' | jq .
+  ../testing/response.json && cat ../testing/response.json | jq -r '.body' | jq .
 ```
 
 ### 3. Create a Course
@@ -40,7 +40,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
   --payload "$(echo '{"httpMethod":"POST","path":"/api/v1/courses","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda\",\"price\":99.99}"}' | base64)" \
-  response.json && cat response.json | jq -r '.body' | jq .
+  ../testing/response.json && cat ../testing/response.json | jq -r '.body' | jq .
 ```
 
 ### 4. Get Course by ID
@@ -48,7 +48,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
   --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses/1","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json && cat response.json | jq -r '.body' | jq .
+  ../testing/response.json && cat ../testing/response.json | jq -r '.body' | jq .
 ```
 
 ### 5. Get Course by Name
@@ -56,7 +56,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
   --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses/name/Spring Boot with AWS Lambda","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json && cat response.json | jq -r '.body' | jq .
+  ../testing/response.json && cat ../testing/response.json | jq -r '.body' | jq .
 ```
 
 ### 6. Update Course
@@ -64,7 +64,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
   --payload "$(echo '{"httpMethod":"PUT","path":"/api/v1/courses/1","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda - Updated\",\"price\":149.99}"}' | base64)" \
-  response.json && cat response.json | jq -r '.body' | jq .
+  ../testing/response.json && cat ../testing/response.json | jq -r '.body' | jq .
 ```
 
 ### 7. Delete Course
@@ -72,7 +72,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
   --payload "$(echo '{"httpMethod":"DELETE","path":"/api/v1/courses/1","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json && cat response.json | jq -r '.body' | jq .
+  ../testing/response.json && cat ../testing/response.json | jq -r '.body' | jq .
 ```
 
 ## Expected Responses
@@ -133,5 +133,5 @@ Visit: http://localhost:4566/_localstack/dashboard
 
 ## Clean Up
 ```bash
-rm -f response.json
+rm -f ../testing/response.json
 ``` 

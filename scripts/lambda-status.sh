@@ -32,12 +32,12 @@ echo "🧪 Quick readiness test..."
 if aws --endpoint-url=http://localhost:4566 lambda invoke \
     --function-name "$FUNCTION_NAME" \
     --payload "$(echo '{"httpMethod":"GET","path":"/ping","headers":{}}' | base64)" \
-    response.json 2>/dev/null; then
+    ../testing/response.json 2>/dev/null; then
     
     echo "✅ Lambda function is ready and responding!"
     echo "📡 Response:"
-    cat response.json | jq -r '.body' | jq .
-    rm -f response.json
+    cat ../testing/response.json | jq -r '.body' | jq .
+rm -f ../testing/response.json
 else
     echo "⏳ Lambda function exists but not ready yet (cold start in progress)"
     echo "💡 This is normal for Spring Boot Lambda functions"

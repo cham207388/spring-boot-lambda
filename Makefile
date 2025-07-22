@@ -31,6 +31,7 @@ clean: ## Clean build artifacts
 	mvn clean
 	rm -f scripts/response.json
 	rm -f terraform/response.json
+	rm -f testing/response.json
 
 # LocalStack management
 ls-start: ## Start LocalStack with Docker Compose

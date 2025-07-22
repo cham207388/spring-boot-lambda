@@ -72,12 +72,12 @@ while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
           "body": null,
           "isBase64Encoded": false
         }' | base64)" \
-        response.json 2>/dev/null; then
+        ../testing/response.json 2>/dev/null; then
         
         echo "✅ Lambda function is ready!"
         echo "📡 Response:"
-        cat response.json | jq -r '.body' | jq .
-        rm -f response.json
+        cat ../testing/response.json | jq -r '.body' | jq .
+rm -f ../testing/response.json
         exit 0
     else
         echo "⏳ Lambda function not ready yet, waiting 10 seconds..."

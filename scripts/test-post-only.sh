@@ -24,10 +24,10 @@ echo "Payload length: ${#POST_PAYLOAD} characters"
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "$FUNCTION_NAME" \
   --payload "$ENCODED_PAYLOAD" \
-  response.json
+  ../testing/response.json
 
 echo "✅ POST Response:"
-cat response.json | jq -r '.body' | jq .
+cat ../testing/response.json | jq -r '.body' | jq .
 
 echo ""
 echo "🎉 POST test completed!" 
