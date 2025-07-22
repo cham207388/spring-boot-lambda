@@ -1,0 +1,4 @@
+# LocalStack Development Configuration
+use_localstack = true
+aws_region     = "us-east-1"
+acm_certificate_arn = "arn:aws:acm:us-east-1:000000000000:certificate/test-cert" 
