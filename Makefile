@@ -46,7 +46,7 @@ ls-check: ## Check LocalStack status and Lambda function
 	./scripts/check-localstack.sh
 
 ls-health: ## Check LocalStack health endpoint
-	curl http://localhost:4566/_localstack/health
+	curl -s http://localhost:4566/_localstack/health | jq . || echo "❌ LocalStack not responding"
 
 ls-cleanup: ## Clean up LocalStack completely
 	./scripts/localstack-cleanup.sh

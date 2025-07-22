@@ -20,7 +20,55 @@ echo ""
 echo "📡 Testing GET /api/v1/courses (get all courses)..."
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses","headers":{"Content-Type":"application/json"}}' | base64)" \
+  --payload "$(echo '{
+    "resource": "/api/v1/courses",
+    "path": "/api/v1/courses",
+    "httpMethod": "GET",
+    "headers": {
+      "Accept": "*/*",
+      "Content-Type": "application/json"
+    },
+    "multiValueHeaders": {
+      "Accept": ["*/*"],
+      "Content-Type": ["application/json"]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+      "resourceId": "test",
+      "resourcePath": "/api/v1/courses",
+      "httpMethod": "GET",
+      "extendedRequestId": "test",
+      "requestTime": "22/Jul/2025:18:15:00 +0000",
+      "path": "/api/v1/courses",
+      "accountId": "000000000000",
+      "protocol": "HTTP/1.1",
+      "stage": "test",
+      "domainPrefix": "test",
+      "requestTimeEpoch": 1732217700,
+      "requestId": "test",
+      "identity": {
+        "cognitoIdentityPoolId": null,
+        "accountId": null,
+        "cognitoIdentityId": null,
+        "caller": null,
+        "sourceIp": "127.0.0.1",
+        "principalOrgId": null,
+        "accessKey": null,
+        "cognitoAuthenticationType": null,
+        "cognitoAuthenticationProvider": null,
+        "userArn": null,
+        "userAgent": "test",
+        "user": null
+      },
+      "domainName": "test",
+      "apiId": "test"
+    },
+    "body": null,
+    "isBase64Encoded": false
+  }' | base64)" \
   response.json
 
 echo "✅ Response:"
@@ -31,115 +79,118 @@ echo ""
 echo "📡 Testing POST /api/v1/courses (create a course)..."
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"POST","path":"/api/v1/courses","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda\",\"description\":\"Learn to build serverless applications with Spring Boot\"}"}' | base64)" \
+  --payload "$(echo '{
+    "resource": "/api/v1/courses",
+    "path": "/api/v1/courses",
+    "httpMethod": "POST",
+    "headers": {
+      "Accept": "*/*",
+      "Content-Type": "application/json"
+    },
+    "multiValueHeaders": {
+      "Accept": ["*/*"],
+      "Content-Type": ["application/json"]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+      "resourceId": "test",
+      "resourcePath": "/api/v1/courses",
+      "httpMethod": "POST",
+      "extendedRequestId": "test",
+      "requestTime": "22/Jul/2025:18:15:10 +0000",
+      "path": "/api/v1/courses",
+      "accountId": "000000000000",
+      "protocol": "HTTP/1.1",
+      "stage": "test",
+      "domainPrefix": "test",
+      "requestTimeEpoch": 1732217710,
+      "requestId": "test",
+      "identity": {
+        "cognitoIdentityPoolId": null,
+        "accountId": null,
+        "cognitoIdentityId": null,
+        "caller": null,
+        "sourceIp": "127.0.0.1",
+        "principalOrgId": null,
+        "accessKey": null,
+        "cognitoAuthenticationType": null,
+        "cognitoAuthenticationProvider": null,
+        "userArn": null,
+        "userAgent": "test",
+        "user": null
+      },
+      "domainName": "test",
+      "apiId": "test"
+    },
+    "body": "{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda\",\"description\":\"Learn to build serverless applications with Spring Boot\"}",
+    "isBase64Encoded": false
+  }' | base64)" \
   response.json
 
 echo "✅ Response:"
 cat response.json | jq -r '.body' | jq .
 
-# Test 3: POST another course
-echo ""
-echo "📡 Testing POST /api/v1/courses (create another course)..."
-aws --endpoint-url=http://localhost:4566 lambda invoke \
-  --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"POST","path":"/api/v1/courses","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"2\",\"name\":\"Terraform Infrastructure\",\"description\":\"Learn Infrastructure as Code with Terraform\"}"}' | base64)" \
-  response.json
-
-echo "✅ Response:"
-cat response.json | jq -r '.body' | jq .
-
-# Test 4: GET /api/v1/courses (get all courses again)
+# Test 3: GET /api/v1/courses (get all courses again)
 echo ""
 echo "📡 Testing GET /api/v1/courses (get all courses after creation)..."
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses","headers":{"Content-Type":"application/json"}}' | base64)" \
+  --payload "$(echo '{
+    "resource": "/api/v1/courses",
+    "path": "/api/v1/courses",
+    "httpMethod": "GET",
+    "headers": {
+      "Accept": "*/*",
+      "Content-Type": "application/json"
+    },
+    "multiValueHeaders": {
+      "Accept": ["*/*"],
+      "Content-Type": ["application/json"]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+      "resourceId": "test",
+      "resourcePath": "/api/v1/courses",
+      "httpMethod": "GET",
+      "extendedRequestId": "test",
+      "requestTime": "22/Jul/2025:18:15:20 +0000",
+      "path": "/api/v1/courses",
+      "accountId": "000000000000",
+      "protocol": "HTTP/1.1",
+      "stage": "test",
+      "domainPrefix": "test",
+      "requestTimeEpoch": 1732217720,
+      "requestId": "test",
+      "identity": {
+        "cognitoIdentityPoolId": null,
+        "accountId": null,
+        "cognitoIdentityId": null,
+        "caller": null,
+        "sourceIp": "127.0.0.1",
+        "principalOrgId": null,
+        "accessKey": null,
+        "cognitoAuthenticationType": null,
+        "cognitoAuthenticationProvider": null,
+        "userArn": null,
+        "userAgent": "test",
+        "user": null
+      },
+      "domainName": "test",
+      "apiId": "test"
+    },
+    "body": null,
+    "isBase64Encoded": false
+  }' | base64)" \
   response.json
 
 echo "✅ Response:"
 cat response.json | jq -r '.body' | jq .
 
-# Test 5: GET /api/v1/courses/{id} (get course by ID)
 echo ""
-echo "📡 Testing GET /api/v1/courses/1 (get course by ID)..."
-aws --endpoint-url=http://localhost:4566 lambda invoke \
-  --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses/1","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json
-
-echo "✅ Response:"
-cat response.json | jq -r '.body' | jq .
-
-# Test 6: GET /api/v1/courses/name/{name} (get course by name)
-echo ""
-echo "📡 Testing GET /api/v1/courses/name/Spring Boot with AWS Lambda (get course by name)..."
-aws --endpoint-url=http://localhost:4566 lambda invoke \
-  --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses/name/Spring Boot with AWS Lambda","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json
-
-echo "✅ Response:"
-cat response.json | jq -r '.body' | jq .
-
-# Test 7: PUT /api/v1/courses/{id} (update course)
-echo ""
-echo "📡 Testing PUT /api/v1/courses/1 (update course)..."
-aws --endpoint-url=http://localhost:4566 lambda invoke \
-  --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"PUT","path":"/api/v1/courses/1","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda - Updated\",\"description\":\"Updated description for Spring Boot course\"}"}' | base64)" \
-  response.json
-
-echo "✅ Response:"
-cat response.json | jq -r '.body' | jq .
-
-# Test 8: GET /api/v1/courses/1 (verify update)
-echo ""
-echo "📡 Testing GET /api/v1/courses/1 (verify update)..."
-aws --endpoint-url=http://localhost:4566 lambda invoke \
-  --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses/1","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json
-
-echo "✅ Response:"
-cat response.json | jq -r '.body' | jq .
-
-# Test 9: DELETE /api/v1/courses/{id} (delete course)
-echo ""
-echo "📡 Testing DELETE /api/v1/courses/2 (delete course)..."
-aws --endpoint-url=http://localhost:4566 lambda invoke \
-  --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"DELETE","path":"/api/v1/courses/2","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json
-
-echo "✅ Response:"
-cat response.json | jq -r '.body' | jq .
-
-# Test 10: GET /api/v1/courses (verify deletion)
-echo ""
-echo "📡 Testing GET /api/v1/courses (verify deletion)..."
-aws --endpoint-url=http://localhost:4566 lambda invoke \
-  --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"GET","path":"/api/v1/courses","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json
-
-echo "✅ Response:"
-cat response.json | jq -r '.body' | jq .
-
-# Test 11: GET /ping (health check)
-echo ""
-echo "📡 Testing GET /ping (health check)..."
-aws --endpoint-url=http://localhost:4566 lambda invoke \
-  --function-name "$FUNCTION_NAME" \
-  --payload "$(echo '{"httpMethod":"GET","path":"/ping","headers":{"Content-Type":"application/json"}}' | base64)" \
-  response.json
-
-echo "✅ Response:"
-cat response.json | jq -r '.body' | jq .
-
-# Clean up
-rm -f response.json
-
-echo ""
-echo "🎉 All Course API tests completed!"
-echo "🔍 LocalStack Dashboard: http://localhost:4566/_localstack/dashboard"
-echo "📊 DynamoDB Table: Course" 
+echo "🎉 Course API tests completed!" 

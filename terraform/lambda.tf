@@ -5,7 +5,6 @@ resource "aws_lambda_function" "springboot_lambda" {
   memory_size   = 512
   timeout       = 300
   role          = aws_iam_role.lambda_exec_role.arn
-  architectures = ["arm64"]
 
   filename         = "${path.module}/../target/spring-boot-lambda-1.0-SNAPSHOT-lambda-package.zip"
   source_code_hash = filebase64sha256("${path.module}/../target/spring-boot-lambda-1.0-SNAPSHOT-lambda-package.zip")

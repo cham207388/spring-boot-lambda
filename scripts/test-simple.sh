@@ -20,10 +20,58 @@ RETRY_COUNT=0
 while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
     echo "🔄 Attempt $((RETRY_COUNT + 1))/$MAX_RETRIES..."
     
-    # Try to invoke the function
+    # Try to invoke the function with proper AwsProxyRequest format
     if aws --endpoint-url=http://localhost:4566 lambda invoke \
         --function-name "$FUNCTION_NAME" \
-        --payload "$(echo '{"httpMethod":"GET","path":"/ping","headers":{}}' | base64)" \
+        --payload "$(echo '{
+          "resource": "/ping",
+          "path": "/ping",
+          "httpMethod": "GET",
+          "headers": {
+            "Accept": "*/*",
+            "Content-Type": "application/json"
+          },
+          "multiValueHeaders": {
+            "Accept": ["*/*"],
+            "Content-Type": ["application/json"]
+          },
+          "queryStringParameters": null,
+          "multiValueQueryStringParameters": null,
+          "pathParameters": null,
+          "stageVariables": null,
+          "requestContext": {
+            "resourceId": "test",
+            "resourcePath": "/ping",
+            "httpMethod": "GET",
+            "extendedRequestId": "test",
+            "requestTime": "22/Jul/2025:18:14:16 +0000",
+            "path": "/ping",
+            "accountId": "000000000000",
+            "protocol": "HTTP/1.1",
+            "stage": "test",
+            "domainPrefix": "test",
+            "requestTimeEpoch": 1732217656,
+            "requestId": "test",
+            "identity": {
+              "cognitoIdentityPoolId": null,
+              "accountId": null,
+              "cognitoIdentityId": null,
+              "caller": null,
+              "sourceIp": "127.0.0.1",
+              "principalOrgId": null,
+              "accessKey": null,
+              "cognitoAuthenticationType": null,
+              "cognitoAuthenticationProvider": null,
+              "userArn": null,
+              "userAgent": "test",
+              "user": null
+            },
+            "domainName": "test",
+            "apiId": "test"
+          },
+          "body": null,
+          "isBase64Encoded": false
+        }' | base64)" \
         response.json 2>/dev/null; then
         
         echo "✅ Lambda function is ready!"
