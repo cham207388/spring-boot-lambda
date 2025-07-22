@@ -39,7 +39,7 @@ public class CourseController {
 
     @GetMapping(value = "/name/{name}", produces = "application/json")
     public ResponseEntity<Course> getCourseByName(@PathVariable String name) {
-        Optional<Course> course = courseService.getCourseById(name);
+        Optional<Course> course = courseService.getCourseByName(name);
         return course.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

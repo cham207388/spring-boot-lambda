@@ -5,11 +5,17 @@ set -e
 
 echo "🚀 Deploying to LocalStack..."
 
-# Check if Lambda package exists
+# Build the Lambda package first
+echo "🏗️  Building Lambda package..."
+mvn clean package
+
+# Verify the Lambda package was created
 if [ ! -f "target/spring-boot-lambda-1.0-SNAPSHOT-lambda-package.zip" ]; then
-    echo "❌ Lambda package not found. Please run: mvn clean package"
+    echo "❌ Lambda package not found after build. Build may have failed."
     exit 1
 fi
+
+echo "✅ Lambda package built successfully"
 
 # Wait for LocalStack to be ready with better retry logic
 echo "⏳ Waiting for LocalStack to be ready..."
