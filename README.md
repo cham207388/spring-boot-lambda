@@ -2,9 +2,10 @@
 
 - [Spring-boot-lambda serverless API](#spring-boot-lambda-serverless-api)
   - [Pre-requisites](#pre-requisites)
+  - [Creating the project](#creating-the-project)
   - [Building the project](#building-the-project)
-  - [Testing locally with the SAM CLI](#testing-locally-with-the-sam-cli)
-  - [Deploying to AWS](#deploying-to-aws)
+  - [Testing locally with LocalStack](#testing-locally-with-localstack)
+  - [Deploying to AWS with Terraform](#deploying-to-aws-with-terraform)
   - [Manual Deploy](#manual-deploy)
     - [Testing on AWS Lambda Console](#testing-on-aws-lambda-console)
   - [Manually create API Gateway frontend](#manually-create-api-gateway-frontend)
@@ -20,83 +21,118 @@ The spring-boot-lambda project, created with [`aws-serverless-java-container`](h
 The starter project defines a simple `/ping` resource that can accept `GET` requests with its tests.
 I added Course Resource
 
-The project folder also includes a `template.yml` file. You can use this [SAM](https://github.com/awslabs/serverless-application-model) file to deploy the project to AWS Lambda and Amazon API Gateway or test in local with the [SAM CLI](https://github.com/awslabs/aws-sam-cli). 
+This project uses Terraform for infrastructure as code to deploy to AWS Lambda and Amazon API Gateway.
 
 ## Pre-requisites
 * [AWS CLI](https://aws.amazon.com/cli/)
-* [SAM CLI](https://github.com/awslabs/aws-sam-cli)
-* [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/)
+* [Terraform](https://www.terraform.io/)
+* [Maven](https://maven.apache.org/)
+* [Docker](https://www.docker.com/) (for LocalStack testing)
+
+## Creating the project
+
+To scaffold a new Spring Boot Lambda project from scratch:
+
+```bash
+$ mvn archetype:generate \
+  -DartifactId=spring-boot-lambda \
+  -DarchetypeGroupId=com.amazonaws.serverless.archetypes \
+  -DarchetypeArtifactId=aws-serverless-jersey-archetype \
+  -DarchetypeVersion=2.1.2 \
+  -DgroupId=com.abc \
+  -Dversion=1.0-SNAPSHOT \
+  -Dinteractive=false
+
+$ cd spring-boot-lambda
+```
+
+This will create a basic Spring Boot Lambda project with:
+- Maven project structure
+- Basic Jersey REST endpoints
+- Lambda handler configuration
+- Sample `/ping` endpoint
 
 ## Building the project
-You can use the SAM CLI to quickly build the project
-```bash
-$ mvn archetype:generate -DartifactId=spring-boot-lambda -DarchetypeGroupId=com.amazonaws.serverless.archetypes -DarchetypeArtifactId=aws-serverless-jersey-archetype -DarchetypeVersion=2.1.2 -DgroupId=com.abc -Dversion=1.0-SNAPSHOT -Dinteractive=false
-$ cd spring-boot-lambda
-$ sam build
-Building resource 'SpringBootLambdaFunction'
-Running JavaGradleWorkflow:GradleBuild
-Running JavaGradleWorkflow:CopyArtifacts
-
-Build Succeeded
-
-Built Artifacts  : .aws-sam/build
-Built Template   : .aws-sam/build/template.yaml
-
-Commands you can use next
-=========================
-[*] Invoke Function: sam local invoke
-[*] Deploy: sam deploy --guided
-```
-
-## Testing locally with the SAM CLI
-
-From the project root folder - where the `template.yml` file is located - start the API with the SAM CLI.
+You can build the project using Maven:
 
 ```bash
-$ sam local start-api
-
-...
-Mounting com.amazonaws.serverless.archetypes.StreamLambdaHandler::handleRequest (java11) at http://127.0.0.1:3000/{proxy+} [OPTIONS GET HEAD POST PUT DELETE PATCH]
-...
+$ mvn clean package
 ```
 
-Using a new shell, you can send a test ping request to your API:
+This will create a JAR file in the `target` directory that can be deployed to AWS Lambda.
+
+## Testing locally with LocalStack
+
+You can test the application locally using LocalStack, which provides a local AWS cloud stack:
 
 ```bash
-$ curl -s http://127.0.0.1:3000/ping | python -m json.tool
+# Start LocalStack
+$ make ls-start
 
-{
-    "pong": "Hello, World!"
-}
-``` 
+# Build and deploy to LocalStack
+$ make ls-deploy
 
-## Deploying to AWS
-To deploy the application in your AWS account, you can use the SAM CLI's guided deployment process and follow the instructions on the screen
+# Test the API
+$ make ls-test
 
+# POST to the API (default: "Spring Boot with AWS Lambda")
+$ make ls-test-post
+
+# POST with custom course name
+$ make ls-test-post NAME="Advanced Java Programming"
+
+# GET all courses
+$ make ls-test-get
+
+# GET a course by id (default: id=1)
+$ make ls-test-get-id
+# GET a course by specific id
+$ make ls-test-get-id ID=123
+
+# GET a course by name (default: "Spring Boot with AWS Lambda")
+$ make ls-test-get-name
+# GET a course by specific name
+$ make ls-test-get-name NAME="Advanced Java Programming"
+
+# PUT a course
+$ make ls-test-put
+
+# DELETE a course
+$ make ls-test-delete
 ```
-$ sam deploy --guided
-```
 
-Once the deployment is completed, the SAM CLI will print out the stack's outputs, including the new application URL. You can use `curl` or a web browser to make a call to the URL
+## Deploying to AWS with Terraform
 
-```
-...
--------------------------------------------------------------------------------------------------------------
-OutputKey-Description                        OutputValue
--------------------------------------------------------------------------------------------------------------
-SpringBootLambdaApi - URL for application            https://xxxxxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/pets
--------------------------------------------------------------------------------------------------------------
-```
+To deploy the application to AWS using Terraform:
 
-Copy the `OutputValue` into a browser or use curl to test your first request:
-
+1. Navigate to the terraform directory:
 ```bash
-$ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python -m json.tool
-
-{
-    "pong": "Hello, World!"
-}
+$ cd terraform
 ```
+
+2. Initialize Terraform:
+```bash
+$ terraform init
+```
+
+3. Review the plan:
+```bash
+$ terraform plan -var-file="terraform.tfvars.aws"
+```
+
+4. Deploy the infrastructure:
+```bash
+$ terraform apply -var-file="terraform.tfvars.aws"
+```
+
+The deployment will create:
+- Lambda function
+- API Gateway
+- DynamoDB table
+- IAM roles and policies
+- Route53 records (if configured)
+
+Once deployed, you can access your API at the provided URL.
 
 ## Manual Deploy
 
@@ -151,6 +187,4 @@ swagger-initializer.js:5 Uncaught ReferenceError: SwaggerUIBundle is not defined
 ```
 
 - update api gateway tf config for binary media types
-- create StaticResourceConfig 
-
-
+- create StaticResourceConfig

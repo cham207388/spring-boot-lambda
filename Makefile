@@ -69,14 +69,14 @@ ls-test-full: ## Run full test suite
 ls-test-get: ## Test GET endpoint only (all courses)
 	./scripts/test-get-only.sh
 
-ls-test-get-id: ## Test GET by ID endpoint only
-	./scripts/test-get-by-id.sh
+ls-test-get-id: ## Test GET by ID endpoint only (usage: make ls-test-get-id ID=123)
+	./scripts/test-get-by-id.sh $(ID)
 
-ls-test-get-name: ## Test GET by name endpoint only
-	./scripts/test-get-by-name.sh
+ls-test-get-name: ## Test GET by name endpoint only (usage: make ls-test-get-name NAME="Course Name")
+	./scripts/test-get-by-name.sh "$(NAME)"
 
-ls-test-post: ## Test POST endpoint only
-	./scripts/test-post-only.sh
+ls-test-post: ## Test POST endpoint only (usage: make ls-test-post NAME="Course Name")
+	./scripts/test-post-only.sh "$(NAME)"
 
 ls-test-put: ## Test PUT endpoint only
 	./scripts/test-put-only.sh
