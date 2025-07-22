@@ -57,4 +57,13 @@ public class CourseService {
         courseTable.deleteItem(existing);
         return true;
     }
+
+    public Optional<Course> getCourseByName(String name) {
+        log.info("Getting course with name {} from DynamoDB", name);
+        return courseTable.scan()
+                .items()
+                .stream()
+                .filter(course -> name.equals(course.getName()))
+                .findFirst();
+    }
 }

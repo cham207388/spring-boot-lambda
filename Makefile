@@ -66,8 +66,26 @@ ls-test: ## Test Lambda function with retry logic
 ls-test-full: ## Run full test suite
 	./scripts/test-localstack.sh
 
+ls-test-get: ## Test GET endpoint only (all courses)
+	./scripts/test-get-only.sh
+
+ls-test-get-id: ## Test GET by ID endpoint only
+	./scripts/test-get-by-id.sh
+
+ls-test-get-name: ## Test GET by name endpoint only
+	./scripts/test-get-by-name.sh
+
 ls-test-post: ## Test POST endpoint only
 	./scripts/test-post-only.sh
+
+ls-test-put: ## Test PUT endpoint only
+	./scripts/test-put-only.sh
+
+ls-test-delete: ## Test DELETE endpoint only
+	./scripts/test-delete-only.sh
+
+ls-test-crud: ## Test complete CRUD operations (POST, GET, PUT, DELETE)
+	./scripts/test-crud-full.sh
 
 # Development workflow
 dev-setup: ## Complete development setup (cleanup + build + start + deploy)
