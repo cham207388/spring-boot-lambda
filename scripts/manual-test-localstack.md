@@ -129,7 +129,7 @@ docker logs <localstack-container-id>
 ```
 
 ### LocalStack Dashboard
-Visit: http://localhost:4566/_localstack/dashboard
+Visit: https://app.localstack.cloud/
 
 ## Clean Up
 ```bash

@@ -15,7 +15,7 @@ output "dynamodb_table_name" {
 
 output "localstack_dashboard" {
   description = "LocalStack Dashboard URL"
-  value       = "http://localhost:4566/_localstack/dashboard"
+  value       = "https://app.localstack.cloud/"
 }
 
 output "lambda_invoke_url" {

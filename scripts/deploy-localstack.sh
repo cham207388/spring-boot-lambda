@@ -46,4 +46,4 @@ terraform apply -var-file="terraform.tfvars.localstack" -auto-approve
 cd ..
 
 echo "✅ Deployed to LocalStack successfully!"
-echo "📊 Dashboard: http://localhost:4566/_localstack/dashboard" 
+echo "📊 Dashboard: https://app.localstack.cloud/" 

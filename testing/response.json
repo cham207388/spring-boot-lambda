@@ -1,0 +1,1 @@
+{"statusCode":201,"multiValueHeaders":{"Content-Type":["application/json"],"Vary":["Origin","Access-Control-Request-Method","Access-Control-Request-Headers"]},"body":"{\"id\":\"8e2db7ee-41b8-4ea3-911b-21d3d91b4fb3\",\"name\":\"Spring Boot with AWS Lambda\",\"price\":99.99}","isBase64Encoded":false}

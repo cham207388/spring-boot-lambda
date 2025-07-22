@@ -45,4 +45,4 @@ else
 fi
 
 echo ""
-echo "🔍 LocalStack Dashboard: http://localhost:4566/_localstack/dashboard" 
+echo "🔍 LocalStack Dashboard: https://app.localstack.cloud/" 

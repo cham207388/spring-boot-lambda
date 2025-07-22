@@ -93,6 +93,6 @@ echo "🔧 Troubleshooting suggestions:"
 echo "1. Check LocalStack logs: make ls-logs"
 echo "2. Check Lambda function status: make ls-check"
 echo "3. Restart LocalStack: make ls-stop && make ls-start"
-echo "4. Visit LocalStack Dashboard: http://localhost:4566/_localstack/dashboard"
+echo "4. Visit LocalStack Dashboard: https://app.localstack.cloud/"
 echo "5. Try manual invocation: aws --endpoint-url=http://localhost:4566 lambda get-function --function-name $FUNCTION_NAME"
 exit 1 

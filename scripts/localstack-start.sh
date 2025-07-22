@@ -53,7 +53,7 @@ fi
 echo ""
 echo "🎉 LocalStack is running!"
 echo "📡 Endpoint: http://localhost:4566"
-echo "🔍 Dashboard: http://localhost:4566/_localstack/dashboard"
+echo "🔍 Dashboard: https://app.localstack.cloud/"
 echo ""
 echo "📋 Next steps:"
 echo "1. Deploy your Lambda: ./scripts/deploy-localstack.sh"

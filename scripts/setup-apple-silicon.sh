@@ -82,7 +82,7 @@ cd ..
 echo ""
 echo "🎉 Setup complete for Apple Silicon M3!"
 echo ""
-echo "📊 LocalStack Dashboard: http://localhost:4566/_localstack/dashboard"
+echo "📊 LocalStack Dashboard: https://app.localstack.cloud/"
 echo "🧪 Test your Lambda: make ls-test"
 echo "📋 Check status: make ls-check"
 echo ""
