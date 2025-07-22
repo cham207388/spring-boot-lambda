@@ -39,7 +39,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 ```bash
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
-  --payload "$(echo '{"httpMethod":"POST","path":"/api/v1/courses","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda\",\"description\":\"Learn to build serverless applications with Spring Boot\"}"}' | base64)" \
+  --payload "$(echo '{"httpMethod":"POST","path":"/api/v1/courses","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda\",\"price\":99.99}"}' | base64)" \
   response.json && cat response.json | jq -r '.body' | jq .
 ```
 
@@ -63,7 +63,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 ```bash
 aws --endpoint-url=http://localhost:4566 lambda invoke \
   --function-name "springboot-course-api" \
-  --payload "$(echo '{"httpMethod":"PUT","path":"/api/v1/courses/1","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda - Updated\",\"description\":\"Updated description\"}"}' | base64)" \
+  --payload "$(echo '{"httpMethod":"PUT","path":"/api/v1/courses/1","headers":{"Content-Type":"application/json"},"body":"{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda - Updated\",\"price\":149.99}"}' | base64)" \
   response.json && cat response.json | jq -r '.body' | jq .
 ```
 
@@ -92,7 +92,7 @@ aws --endpoint-url=http://localhost:4566 lambda invoke \
 ```json
 {
   "statusCode": 201,
-  "body": "{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda\",\"description\":\"Learn to build serverless applications with Spring Boot\"}",
+  "body": "{\"id\":\"1\",\"name\":\"Spring Boot with AWS Lambda\",\"price\":99.99}",
   "headers": {
     "Content-Type": "application/json"
   }
