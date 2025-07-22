@@ -98,7 +98,7 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 }
 ```
 
-## Manual Deploy 
+## Manual Deploy
 
 - create lambda
 - name, java21, x86_64
