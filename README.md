@@ -34,16 +34,18 @@ This project uses Terraform for infrastructure as code to deploy to AWS Lambda a
 To scaffold a new Spring Boot Lambda project from scratch:
 
 ```bash
-$ mvn archetype:generate \
-  -DartifactId=spring-boot-lambda \
+mvn archetype:generate \
+  -DartifactId=your-artifact-id \
   -DarchetypeGroupId=com.amazonaws.serverless.archetypes \
   -DarchetypeArtifactId=aws-serverless-jersey-archetype \
   -DarchetypeVersion=2.1.2 \
-  -DgroupId=com.abc \
+  -DgroupId=your.group.id \
   -Dversion=1.0-SNAPSHOT \
   -Dinteractive=false
+```
 
-$ cd spring-boot-lambda
+```bash
+cd your-artifact-id
 ```
 
 This will create a basic Spring Boot Lambda project with:
@@ -65,39 +67,75 @@ This will create a JAR file in the `target` directory that can be deployed to AW
 
 You can test the application locally using LocalStack, which provides a local AWS cloud stack:
 
+### Start LocalStack
+
 ```bash
-# Start LocalStack
 $ make ls-start
+```
 
-# Build and deploy to LocalStack
+### Build and deploy to LocalStack
+
+```bash
 $ make ls-deploy
+```
 
-# Test the API
+### Test the API
+
+```bash
 $ make ls-test
+```
 
-# POST to the API (default: "Spring Boot with AWS Lambda")
+### POST with default course name ("Spring Boot with AWS Lambda")
+
+```bash
 $ make ls-test-post
+```
 
-# POST with custom course name
+### POST with custom course name
+
+```bash
 $ make ls-test-post NAME="Advanced Java Programming"
+```
 
-# GET all courses
+### GET all courses
+
+```bash
 $ make ls-test-get
+```
 
-# GET a course by id (default: id=1)
+### GET a course by id (default: id=1)
+
+```bash
 $ make ls-test-get-id
-# GET a course by specific id
+```
+
+### GET a course by specific id
+
+```bash
 $ make ls-test-get-id ID=123
+```
 
-# GET a course by name (default: "Spring Boot with AWS Lambda")
+### GET a course by name (default: "Spring Boot with AWS Lambda")
+
+```bash
 $ make ls-test-get-name
-# GET a course by specific name
+```
+
+### GET a course by specific name
+
+```bash
 $ make ls-test-get-name NAME="Advanced Java Programming"
+```
 
-# PUT a course
+### PUT a course
+
+```bash
 $ make ls-test-put
+```
 
-# DELETE a course
+### DELETE a course
+
+```bash
 $ make ls-test-delete
 ```
 
