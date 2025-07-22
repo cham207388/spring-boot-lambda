@@ -65,6 +65,9 @@ ls-test: ## Test Lambda function with retry logic
 ls-test-full: ## Run full test suite
 	./scripts/test-localstack.sh
 
+ls-test-post: ## Test POST endpoint only
+	./scripts/test-post-only.sh
+
 # Development workflow
 dev-setup: ## Complete development setup (cleanup + build + start + deploy)
 	@echo "🚀 Setting up development environment..."
