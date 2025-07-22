@@ -1,3 +1,4 @@
+# ACM provider for custom domain certificates (AWS only)
 provider "aws" {
   alias  = "us-east-1"
   region = "us-east-1"

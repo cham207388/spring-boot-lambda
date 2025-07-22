@@ -19,8 +19,14 @@
     </parent>
 
     <properties>
-        <java.version>21</java.version>
-        <junit.version>5.11.4</junit.version>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aws.lambda.java.version>17</aws.lambda.java.version>
+        <aws.lambda.java.runtime>java17</aws.lambda.java.runtime>
+        <!-- Use ARM64 for Apple Silicon M3 compatibility -->
+        <docker.platform>linux/arm64</docker.platform>
     </properties>
 
     <dependencies>

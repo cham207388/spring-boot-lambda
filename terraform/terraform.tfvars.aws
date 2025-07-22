@@ -1,4 +1,3 @@
 # AWS Production Configuration
 use_localstack = false
-aws_region     = "us-east-2"
-# acm_certificate_arn = "arn:aws:acm:us-east-1:YOUR_ACCOUNT:certificate/YOUR_CERT_ID" 
+aws_region     = "us-east-2" 

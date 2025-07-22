@@ -19,7 +19,7 @@ fi
 
 # Deploy using LocalStack configuration
 cd terraform
-terraform init
+terraform init -upgrade
 terraform apply -var-file="terraform.tfvars.localstack" -auto-approve
 
 echo "✅ Deployed to LocalStack successfully!"
