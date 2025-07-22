@@ -1,7 +1,7 @@
 resource "aws_lambda_function" "springboot_lambda" {
   function_name = "springboot-course-api"
   handler       = "com.abc.StreamLambdaHandler::handleRequest"
-  runtime       = "java17"
+  runtime       = "java21"
   memory_size   = 512
   timeout       = 300
   role          = aws_iam_role.lambda_exec_role.arn

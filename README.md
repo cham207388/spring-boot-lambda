@@ -21,9 +21,10 @@ The spring-boot-lambda project, created with [`aws-serverless-java-container`](h
 The starter project defines a simple `/ping` resource that can accept `GET` requests with its tests.
 I added Course Resource
 
-This project uses Terraform for infrastructure as code to deploy to AWS Lambda and Amazon API Gateway.
+This project uses Java 21 and Terraform for infrastructure as code to deploy to AWS Lambda and Amazon API Gateway.
 
 ## Pre-requisites
+* [Java 21](https://adoptium.net/) (JDK 21)
 * [AWS CLI](https://aws.amazon.com/cli/)
 * [Terraform](https://www.terraform.io/)
 * [Maven](https://maven.apache.org/)
