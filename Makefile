@@ -105,6 +105,18 @@ dev-cleanup: ## Clean up development environment
 	$(MAKE) clean
 	@echo "✅ Cleanup complete!"
 
+dev-up: ## start application
+	@echo "🚀 Setting up development environment..."
+	$(MAKE) build
+	$(MAKE) ls-deploy
+	@echo "✅ Development environment ready!"
+	@echo "🧪 Test with: make ls-test"
+
+dev-down: ## Clean up development environment
+	@echo "🧹 Cleaning up development environment..."
+	$(MAKE) clean
+	@echo "✅ Cleanup complete!"
+
 # Quick development commands
 dev: ## Quick development cycle (build + deploy + test)
 	$(MAKE) build
