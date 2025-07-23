@@ -227,3 +227,79 @@ swagger-initializer.js:5 Uncaught ReferenceError: SwaggerUIBundle is not defined
 
 - update api gateway tf config for binary media types
 - create StaticResourceConfig
+
+
+## Api Gateway
+
+### 1 Create the REST API
+```bash
+API_ID=$(awslocal apigateway create-rest-api --name springboot-api --query 'id' --output text)
+```
+
+### 2 Get the Root Resource ID
+```bash
+ROOT_ID=$(awslocal apigateway get-resources \
+  --rest-api-id $API_ID \
+  --query 'items[?path==`/`].id' \
+  --output text)
+```
+
+### 3 Create a {proxy+} Resource
+```bash
+RESOURCE_ID=$(awslocal apigateway create-resource \
+  --rest-api-id $API_ID \
+  --parent-id $ROOT_ID \
+  --path-part '{proxy+}' \
+  --query 'id' \
+  --output text)
+```
+
+### 4 Set Up ANY Method on the Proxy
+
+```bash
+awslocal apigateway put-method \
+  --rest-api-id $API_ID \
+  --resource-id $RESOURCE_ID \
+  --http-method ANY \
+  --authorization-type "NONE"
+```
+
+### Set Integration to Your Lambda
+
+```bash
+awslocal apigateway put-integration \
+  --rest-api-id $API_ID \
+  --resource-id $RESOURCE_ID \
+  --http-method ANY \
+  --type AWS_PROXY \
+  --integration-http-method POST \
+  --uri arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:000000000000:function:springboot-course-api/invocations
+```
+
+### 6. Add Lambda Permission for API Gateway
+
+```bash
+awslocal lambda add-permission \
+  --function-name springboot-course-api \
+  --statement-id apigateway-access \
+  --action lambda:InvokeFunction \
+  --principal apigateway.amazonaws.com \
+  --source-arn "arn:aws:execute-api:us-east-1:000000000000:$API_ID/*/*/*"
+```
+
+### 7. Deploy the API to a Stage (e.g., dev)
+
+```bash
+awslocal apigateway create-deployment \
+  --rest-api-id $API_ID \
+  --stage-name dev
+```
+
+### Test Your Endpoint
+
+```bash
+curl -X GET http://localhost:4566/restapis/$API_ID/dev/_user_request_/api/v1/courses
+
+# or 
+curl -X GET http://$API_ID.execute-api.localhost.localstack.cloud:4566/dev/api/v1/courses
+```
